@@ -1,0 +1,26 @@
+using System;
+public class multi 
+{
+public static void Main()
+{
+Console.WriteLine("Enter the package of your choice");
+String entry=Console.ReadLine();
+switch(entry)
+{
+case "package A":Console.WriteLine("cost is :RS.250");
+break;
+case "package B":Console.WriteLine("cost is :RS.450");
+break;
+case "package C":Console.WriteLine("cost is :RS.350");
+break;
+case "package A&B":Console.WriteLine("cost is :RS.700");
+break;
+case "package B&C":Console.WriteLine("cost is :RS.800");
+break;
+case "package A&C":Console.WriteLine("cost is :RS.600");
+break;
+case "package A&B&C":Console.WriteLine("cost is :RS.1050");
+break;
+}
+}
+}
