@@ -1,0 +1,27 @@
+create database task1
+
+use task1
+go
+
+create table CANDIDATE
+(
+Ccode int,
+Nname char(20),
+doj date
+
+)
+select*from CANDIDATE
+
+insert into CANDIDATE
+values(1001,'S.Raman','1997-06-12')
+insert into CANDIDATE
+values(1002,'M.sushil','1997-11-12')
+insert into CANDIDATE
+values(1003,'mohanyes','1997-07-30')
+
+
+update CANDIDATE
+set Nname ='R.Krishnan'
+where Ccode = 1001;
+
+drop table CANDIDATE
