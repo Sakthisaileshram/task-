@@ -1,0 +1,27 @@
+﻿@model ClientManagement.Models.ClientModel
+
+
+@{
+    ViewBag.Title = "appointment";
+}
+
+<h2>schedule appointment</h2>
+<form id="appfrm" method="post" action="@Url.Action("appointment")">
+    id      : <input type="text" name="id" /><br />
+    Specialization  : <select name="dept" id="dept">
+        <option value="Gen">General Surgeon</option>
+        <option value="IMed">Internal Medicine</option>
+        <option value="Pedia">Pediatrics</option>
+        <option value="Ortho">Orthopedics</option>
+        <option value="Oph">Ophthalmology</option>
+
+    </select> <br />
+    doctor name      :@Html.DropDownListFor(m=>m.firstName,Model.Doclist,"select doctor")
+    Visit Date       : <input type="date" name="TB_Vdate" /><br />
+    Appointment Time : <input type="time" name="TB_AppTime" /> <br />
+
+    <input type="submit" value="Submit" name="action" />
+    <br />
+    <br />
+</form>
+

@@ -1,0 +1,70 @@
+﻿@using System.Data
+ @using System.Data.SqlClient
+ @model System.Data.DataTable
+@{
+    ViewBag.Title = "doctor";
+}
+<style>
+    form {
+        border: 3px white;
+
+    }
+    .navbar a {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    #Pentry{
+        text-align:right;
+    }
+</style>
+
+
+<body>
+    <div class="navbar navbar-fixed-top  navbar-inverse" style="font-size:20px; background-color:cadetblue; ">
+        <p>
+            <a class="active" href="Home" style="color:white; text-decoration:none ">Home</a>
+            <a class="active" href="patient" style="color: white; text-decoration: none">Patient Details</a>
+            <a class="active" href="appointment " style="color: white; text-decoration: none">Schedule Appointment</a>
+        </p>
+    </div>
+    <div id="form" style=" display:flex; justify-content:center;align-items:center;">
+        <form id="frdoc" method="post" action="@Url.Action("Idoctor")">
+            <center><h2>Enter doctor details</h2></center>
+            <div id="Pentry">
+                First Name : <input type="text" name="TB_f_name" /><br /><br />
+                Last Name  : <input type="text" name="TB_l_name" /><br /><br />
+                Sex        : <input type="text" name="TB_gen" /><br /><br />
+                Specialization  : <input type="text" name="TB_spezz" /><br /><br />
+                Visitin Hours   : <input type="text" name="TB_vhr" /><br /><br />
+                <center><input type="submit" value="Submit" name="action" /></center>
+            </div>
+        </form>
+    </div>
+    <br />
+    <br />
+    <center>
+        <table border="2" cellpadding="2" style="border-color:cadetblue ; width:1000px;">
+            <thead style="background-color:cadetblue;color:white ">
+                <tr>
+                    <td>first name </td>
+                    <td>last name</td>
+                    <td>Gender</td>
+                    <td>Specialization</td>
+                    <td>Visiting hours</td>
+
+                </tr>
+            </thead>
+            @foreach (DataRow dr in Model.Rows)
+            {
+                <tr>
+                    <td>@dr["firstName"].ToString()</td>
+                    <td>@dr["lastName"].ToString()</td>
+                    <td> @dr["sex"].ToString() </td>
+                    <td>@dr["specialization"].ToString()</td>
+                    <td>@dr["visiting_hours"].ToString()</td>
+
+                </tr>
+            }
+        </table></center>
+</body>
+

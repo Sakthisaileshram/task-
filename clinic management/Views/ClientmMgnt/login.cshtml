@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "login";
+}
+
+
+<style>
+form
+{
+border : 3px cadetblue;
+background-color:white;
+}
+#form
+{
+    padding-left:100px;
+        padding-right:100px;
+        padding-top:200px;
+        padding-bottom:100px;
+        
+}
+    #entry
+    {
+        text-align: right;
+    }
+</style>
+<body style="background-color:cadetblue">
+    <div id="form" style=" display:flex; justify-content:center;align-items:center;" >
+
+        <form class="jumbotron text-center" id="Verify" method="post" action="@Url.Action("Verify")">
+            <img src="~/Stone-Clinic-Logo.png" width="50" height="50" align="left"/><br /><br />
+            <center><h2>login</h2></center>
+            <div id="entry">
+                User Name : <input type="text" name="TB_user_name" required  /><br /><br />
+                 password : <input type="password" name="TB_password" required align="right" /><br /><br />
+                <center><input type="submit" value="Submit" name="action" /></center>
+            </div>
+        </form>
+     </div>
+
+</body>
